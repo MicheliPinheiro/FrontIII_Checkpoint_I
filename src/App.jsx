@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Card } from '../src/Card'
 import { professors } from './database/professors'
 
+// Aqui você irá criar os Estados para manipular os Inputs
 function App() {
   const [professorName, setProfessorName] = useState('')
   const [course, setCourse] = useState('')
@@ -21,7 +22,9 @@ function App() {
       picture: professorPhoto
     }
 
-    if ((professorName.trim().length < 3) || (course.trim().length < 6) || (!/[0-9]/.test(professorPhoto)) || (professorPhoto.trim().length < 9)) {
+// Aqui você irá escrever as suas funções de Validação, para verificar se o Formulário foi preenchido corretamente
+    
+  if ((professorName.trim().length < 3) || (course.trim().length < 6) || (!/[0-9]/.test(professorPhoto)) || (professorPhoto.trim().length < 9)) {
       setFormsError(true)
     } else {
       setFormsError(false)
